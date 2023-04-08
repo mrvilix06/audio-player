@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import PlayerAudio from './AudioPlayer/PlayerAudio';
+import {createUseStyles} from 'react-jss'
+
+const useStyle = createUseStyles({
+  App: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh"
+  }
+})
 
 function App() {
+  const classes = useStyle();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.App}>
+      <PlayerAudio />
     </div>
   );
 }
